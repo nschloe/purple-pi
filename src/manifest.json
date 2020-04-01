@@ -1,0 +1,16 @@
+{
+  "name": "MathJax Browser Extension",
+  "version": "0.1.0",
+  "description": "Render MathJax",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "manifest_version": 2,
+  "content_scripts": [
+  {
+    "matches": ["*://*.github.com/*"],
+    "js": ["mathjax.js"]
+  }
+],
+  "web_accessible_resources": [
+    "fonts/*"
+  ]
+}
