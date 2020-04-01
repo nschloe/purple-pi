@@ -17,3 +17,7 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 > $$
 > f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 > $$
+
+
+### License
+This software is published under the [GPLv3+ license](https://www.gnu.org/licenses/gpl-3.0.en.html).
