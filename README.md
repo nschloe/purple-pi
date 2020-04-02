@@ -22,5 +22,11 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 > $$
 
 
+### Related projects
+
+ * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)
+ * [Or Sharir's MathJax Plugin for Github](https://github.com/orsharir/github-mathjax)
+
+
 ### License
 This software is published under the [GPLv3+ license](https://www.gnu.org/licenses/gpl-3.0.en.html).
