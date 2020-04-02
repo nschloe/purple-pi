@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Beautiful math wherever you want",
   "permissions": [
-    "tabs",
+    "activeTab",
     "http://*/",
     "https://*/"
   ],
