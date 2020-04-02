@@ -13,6 +13,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'src/manifest.json' },
             { from: './node_modules/mathjax-full/ts/output/chtml/fonts/tex-woff-v2/', to: 'fonts/' },
+            { from: './images/*.png' },
         ])
     ]
 };

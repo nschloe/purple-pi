@@ -1,7 +1,7 @@
-# mathjax-browser-extension
+# Green Pi
 
 This is a browser extension that, once installed, renders LaTeX-style mathematics on
-pages like GitHub.
+pages that don't otherwise render math, like GitHub.
 
 For example [Cauchy's integral
 formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
