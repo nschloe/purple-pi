@@ -1,1 +1,4 @@
-chrome.runtime.sendMessage({url: location.href}, function(response) {});
+chrome.runtime.sendMessage(
+  {inject: true, url: location.href},
+  function(response) {}
+);
