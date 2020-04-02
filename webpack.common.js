@@ -3,7 +3,9 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    mathjax: path.join(__dirname, "src/content_script.js"),
+    content_script: path.join(__dirname, "src/content_script.js"),
+    background: path.join(__dirname, "src/background.js"),
+    mathjax: path.join(__dirname, "src/mathjax.js"),
   },
   output: {
     path: path.join(__dirname, "dist"),
