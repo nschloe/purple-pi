@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       }
       // Send an empty response to avoid warning
-      sendResponse({ lol: true });
+      sendResponse({});
     });
   } else if (request.type === "toggleWhitelist") {
     chrome.tabs.query(
