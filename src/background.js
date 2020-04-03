@@ -1,7 +1,5 @@
 var browser = require("webextension-polyfill");
 
-var domainWhitelist = ["github.com"];
-
 // https://stackoverflow.com/a/8498668/353337
 function url_domain(data) {
   var a = document.createElement("a");
@@ -9,8 +7,20 @@ function url_domain(data) {
   return a.hostname;
 }
 
-function isWhitelisted(url) {
-  return domainWhitelist.includes(url_domain(url));
+// initialize default whitelist (if it doesn't have a value yet)
+browser.runtime.onInstalled.addListener(() => {
+  const defaultWhitelist = ["github.com", "gitlab.com"];
+  browser.storage.sync.get({ domainWhitelist: undefined }).then((result) => {
+    if (result.domainWhitelist === undefined) {
+      browser.storage.sync.set({ ["domainWhitelist"]: defaultWhitelist });
+    }
+  });
+});
+
+function isWhitelisted(url, callback) {
+  browser.storage.sync.get("domainWhitelist").then((result) => {
+    callback(result.domainWhitelist.includes(url_domain(url)));
+  });
 }
 
 function handleError(error) {
@@ -23,18 +33,22 @@ function handleCheck(request, sender, sendResponse) {
     currentWindow: true,
   });
   querying.then((tabs) => {
-    sendResponse({ isWhitelisted: isWhitelisted(tabs[0].url) });
+    isWhitelisted(tabs[0].url, (response) => {
+      sendResponse({ isWhitelisted: response });
+    });
   }, handleError);
 }
 
 function handleInject(request, sender, sendResponse) {
-  if (isWhitelisted(request.url)) {
-    browser.tabs.executeScript({
-      file: "mathjax.js",
-    });
-  }
-  // Send an empty response to avoid warning
-  sendResponse({});
+  isWhitelisted(request.url, (response) => {
+    if (response) {
+      browser.tabs.executeScript({
+        file: "mathjax.js",
+      });
+    }
+    // Send an empty response to avoid warning
+    sendResponse({});
+  });
 }
 
 function handleToggle(request, sender, sendResponse) {
@@ -46,20 +60,30 @@ function handleToggle(request, sender, sendResponse) {
     // extract domain
     const domain = url_domain(tabs[0].url);
     // toggle domain from whitelist
-    if (domainWhitelist.includes(domain)) {
-      const index = domainWhitelist.indexOf(domain);
-      if (index > -1) {
-        domainWhitelist.splice(index, 1);
+    browser.storage.sync.get("domainWhitelist").then((result) => {
+      if (result.domainWhitelist.includes(domain)) {
+        const index = result.domainWhitelist.indexOf(domain);
+        if (index > -1) {
+          result.domainWhitelist.splice(index, 1);
+        }
+        browser.storage.sync
+          .set({ domainWhitelist: result.domainWhitelist })
+          .then(() => {
+            sendResponse({ isWhitelisted: false });
+          });
+      } else {
+        result.domainWhitelist.push(domain);
+        browser.storage.sync
+          .set({ domainWhitelist: result.domainWhitelist })
+          .then(() => {
+            sendResponse({ isWhitelisted: true });
+          });
       }
-      sendResponse({ isWhitelisted: false });
-    } else {
-      domainWhitelist.push(domain);
-      sendResponse({ isWhitelisted: true });
-    }
+    });
   }, handleError);
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "checkIfWhitelisted") {
     handleCheck(request, sender, sendResponse);
   } else if (request.type === "inject") {
