@@ -8,26 +8,26 @@ function url_domain(data) {
 }
 
 function isWhitelisted(url, callback) {
-  return (isWhitelistedjectMathjax = domainWhitelist.some(function (domain) {
+  return (isWhitelistedjectMathjax = domainWhitelist.some((domain) => {
     let re = new RegExp(".*://.*" + domain + "/.*");
     callback(re.test(url));
   }));
 }
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "checkIfWhitelisted") {
     chrome.tabs.query(
       {
         active: true,
         currentWindow: true,
       },
-      function (tabs) {
+      (tabs) => {
         const domain = url_domain(tabs[0].url);
         sendResponse({ isWhitelisted: domainWhitelist.includes(domain) });
       }
     );
   } else if (request.type === "inject") {
-    isWhitelisted(request.url, function (response) {
+    isWhitelisted(request.url, (response) => {
       if (response) {
         chrome.tabs.executeScript({
           file: "mathjax.js",
@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         active: true,
         currentWindow: true,
       },
-      function (tabs) {
+      (tabs) => {
         // extract domain
         const domain = url_domain(tabs[0].url);
         // toggle domain from whitelist
