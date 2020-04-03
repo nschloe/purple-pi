@@ -24,6 +24,14 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 > $$
 
 
+### Build instructions
+
+To build the production zip, simply install the dependencies (`npm i`), then run
+```
+npm run build
+```
+
+
 ### Related projects
 
  * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)
