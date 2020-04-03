@@ -1,7 +1,17 @@
+chrome.runtime.sendMessage(
+  {type: 'checkIfWhitelisted'},
+  function(response) {
+    var src = response.isWhitelisted ? "images/logo.svg" : "images/logo-gray.svg";
+    document.getElementById("buttonLogo").src = src;
+  }
+);
+
 document.getElementById("myButton").addEventListener("click", function() {
-  console.log('Activation START2');
   chrome.runtime.sendMessage(
-    {toggleWhitelist: true, url: location.href},
-    function(response) {}
+    {type: 'toggleWhitelist'},
+    function(response) {
+      var src = response.isWhitelisted ? "images/logo.svg" : "images/logo-gray.svg";
+      document.getElementById("buttonLogo").src = src;
+    }
   );
 });

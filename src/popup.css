@@ -1,0 +1,12 @@
+#appinfo {
+  font-size: x-small;
+  text-align: center;
+  color: #666666;
+}
+
+button {
+  border:none;
+  background-color:transparent;
+  outline:none;
+  font-size: x-small;
+}

@@ -7,22 +7,34 @@ function url_domain(data) {
   return a.hostname;
 }
 
+function isWhitelisted(url, callback) {
+  return isWhitelistedjectMathjax = domainWhitelist.some(function(domain) {
+    let re = new RegExp('.*:\/\/.*' + domain + '\/.*');
+    callback(re.test(url));
+  });
+}
+
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.hasOwnProperty('inject')) {
-    const injectMathjax = domainWhitelist.some(function(domain) {
-      let re = new RegExp('.*:\/\/.*' + domain + '\/.*');
-      return re.test(request.url);
-    });
-
-    if (injectMathjax) {
-      chrome.tabs.executeScript({
-        file: 'mathjax.js'
-      });
-    }
-    // Send an empty response to avoid warning
-    sendResponse({});
-  } else if (request.hasOwnProperty('toggleWhitelist')) {
+  if (request.type === 'checkIfWhitelisted') {
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function(tabs) {
+      const domain = url_domain(tabs[0].url);
+      sendResponse({isWhitelisted: domainWhitelist.includes(domain)});
+    })
+  } else if (request.type === 'inject') {
+    isWhitelisted(request.url, function(response) {
+      if (response) {
+        chrome.tabs.executeScript({
+          file: 'mathjax.js'
+        });
+      }
+      // Send an empty response to avoid warning
+      sendResponse({lol: true});
+    })
+  } else if (request.type === 'toggleWhitelist') {
     chrome.tabs.query({
       active: true,
       currentWindow: true
@@ -35,11 +47,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (index > -1) {
           domainWhitelist.splice(index, 1);
         }
+        sendResponse({isWhitelisted: false});
       } else {
         domainWhitelist.push(domain);
+        sendResponse({isWhitelisted: true});
       }
-      // Send an empty response to avoid warning
-      sendResponse({});
     });
   }
+
+  // async sendResponse
+  return true;
 });
