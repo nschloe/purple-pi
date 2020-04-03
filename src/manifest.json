@@ -1,8 +1,8 @@
 {
   "name": "Green Pi",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Beautiful math wherever you want",
-  "permissions": ["activeTab", "<all_urls>", "storage"],
+  "permissions": ["<all_urls", "activeTab", "storage"],
   "manifest_version": 2,
   "content_scripts": [
     {
