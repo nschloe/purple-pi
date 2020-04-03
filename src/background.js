@@ -1,3 +1,5 @@
+var browser = require("webextension-polyfill");
+
 var domainWhitelist = ["github.com"];
 
 // https://stackoverflow.com/a/8498668/353337
@@ -7,59 +9,64 @@ function url_domain(data) {
   return a.hostname;
 }
 
-function isWhitelisted(url, callback) {
-  return (isWhitelistedjectMathjax = domainWhitelist.some((domain) => {
-    let re = new RegExp(".*://.*" + domain + "/.*");
-    callback(re.test(url));
-  }));
+function isWhitelisted(url) {
+  return domainWhitelist.includes(url_domain(url));
+}
+
+function handleError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function handleCheck(request, sender, sendResponse) {
+  var querying = browser.tabs.query({
+    active: true,
+    currentWindow: true,
+  });
+  querying.then((tabs) => {
+    sendResponse({ isWhitelisted: isWhitelisted(tabs[0].url) });
+  }, handleError);
+}
+
+function handleInject(request, sender, sendResponse) {
+  if (isWhitelisted(request.url)) {
+    browser.tabs.executeScript({
+      file: "mathjax.js",
+    });
+  }
+  // Send an empty response to avoid warning
+  sendResponse({});
+}
+
+function handleToggle(request, sender, sendResponse) {
+  var querying = browser.tabs.query({
+    active: true,
+    currentWindow: true,
+  });
+  querying.then((tabs) => {
+    // extract domain
+    const domain = url_domain(tabs[0].url);
+    // toggle domain from whitelist
+    if (domainWhitelist.includes(domain)) {
+      const index = domainWhitelist.indexOf(domain);
+      if (index > -1) {
+        domainWhitelist.splice(index, 1);
+      }
+      sendResponse({ isWhitelisted: false });
+    } else {
+      domainWhitelist.push(domain);
+      sendResponse({ isWhitelisted: true });
+    }
+  }, handleError);
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "checkIfWhitelisted") {
-    chrome.tabs.query(
-      {
-        active: true,
-        currentWindow: true,
-      },
-      (tabs) => {
-        const domain = url_domain(tabs[0].url);
-        sendResponse({ isWhitelisted: domainWhitelist.includes(domain) });
-      }
-    );
+    handleCheck(request, sender, sendResponse);
   } else if (request.type === "inject") {
-    isWhitelisted(request.url, (response) => {
-      if (response) {
-        chrome.tabs.executeScript({
-          file: "mathjax.js",
-        });
-      }
-      // Send an empty response to avoid warning
-      sendResponse({});
-    });
+    handleInject(request, sender, sendResponse);
   } else if (request.type === "toggleWhitelist") {
-    chrome.tabs.query(
-      {
-        active: true,
-        currentWindow: true,
-      },
-      (tabs) => {
-        // extract domain
-        const domain = url_domain(tabs[0].url);
-        // toggle domain from whitelist
-        if (domainWhitelist.includes(domain)) {
-          const index = domainWhitelist.indexOf(domain);
-          if (index > -1) {
-            domainWhitelist.splice(index, 1);
-          }
-          sendResponse({ isWhitelisted: false });
-        } else {
-          domainWhitelist.push(domain);
-          sendResponse({ isWhitelisted: true });
-        }
-      }
-    );
+    handleToggle(request, sender, sendResponse);
   }
-
   // async sendResponse
   return true;
 });
