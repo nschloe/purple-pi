@@ -1,7 +1,7 @@
 {
-  "name": "green-pi",
+  "name": "Green Pi",
   "version": "0.1.0",
-  "description": "foobar",
+  "description": "Beautiful math wherever you want.",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js",
@@ -9,7 +9,7 @@
     "format": "prettier src/ --write"
   },
   "author": "Nico Schlömer",
-  "license": "GPLv3+",
+  "license": "GPLv3",
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",

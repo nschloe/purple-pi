@@ -5,7 +5,7 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-green pi is a browser extension that, once installed, renders LaTeX-style mathematics on
+Green Pi is a browser extension that, once installed, renders LaTeX-style mathematics on
 pages that don't otherwise render math, like GitHub.
 
 For example [Cauchy's integral

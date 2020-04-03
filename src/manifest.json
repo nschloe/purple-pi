@@ -1,5 +1,5 @@
 {
-  "name": "green pi",
+  "name": "Green Pi",
   "version": "0.1.0",
   "description": "Beautiful math wherever you want",
   "permissions": ["activeTab", "<all_urls>", "storage"],
