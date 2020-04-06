@@ -11,7 +11,8 @@ function url_domain(data) {
 browser.runtime.onInstalled.addListener(() => {
   const defaultWhitelist = ["github.com", "gitlab.com"];
   browser.storage.sync.get({ domainWhitelist: undefined }).then((result) => {
-    if (result.domainWhitelist === undefined) {
+    // in chrome it's `undefined`, in firefox `null`
+    if (result.domainWhitelist === undefined || result.domainWhitelist === null) {
       browser.storage.sync.set({ ["domainWhitelist"]: defaultWhitelist });
     }
   });

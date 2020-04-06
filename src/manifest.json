@@ -29,5 +29,10 @@
       "48": "images/logo48.png",
       "128": "images/logo128.png"
     }
+  },
+  "applications": {
+    "gecko": {
+      "id": "foobar@green-pi.org"
+    }
   }
 }
