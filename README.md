@@ -39,4 +39,4 @@ npm run build
 
 
 ### License
-This software is published under the [GPLv3+ license](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This software is published under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
