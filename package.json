@@ -2,6 +2,7 @@
   "name": "green-pi",
   "version": "0.0.1",
   "description": "Beautiful math wherever you want.",
+  "repository": "https://github.com/nschloe/green-pi",
   "scripts": {
     "build": "webpack --config webpack.prod.js && cd dist && zip -r ../green-pi.zip * && cd -",
     "dev": "webpack --config webpack.dev.js",
@@ -9,7 +10,7 @@
     "format": "prettier src/ --write"
   },
   "author": "Nico Schlömer",
-  "license": "GPLv3",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
