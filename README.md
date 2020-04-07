@@ -23,6 +23,12 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 > f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 > $$
 
+If installed, the above is rendered as
+
+<p align="center">
+<img alt="green-pi-screenhot" src="https://nschloe.github.io/green-pi/green-pi-screenhot.png" width="70%">
+</p>
+
 
 ### Build instructions
 
