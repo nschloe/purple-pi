@@ -13,9 +13,21 @@ Get Green Pi for
 
   * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 
-For example [Cauchy's integral
-formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
+For example Cauchy's integral formula:
 
+```
+Let \\(U\\) be an open subset of the complex plane \\(\mathbb{C}\\), and suppose the
+closed disk \\(D\\) defined as
+$$
+D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
+$$
+is completely contained in \\(U\\). Let \\(f: U\to\mathbb{C}\\) be a holomorphic
+function, and let \\(\gamma\\) be the circle, oriented counterclockwise, forming the
+boundary of \\(D\\). Then for every \\(a\\) in the interior of \\(D\\),
+$$
+f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
+$$
+```
 > Let \\(U\\) be an open subset of the complex plane \\(\mathbb{C}\\), and suppose the
 > closed disk \\(D\\) defined as
 > $$
@@ -28,8 +40,7 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 > f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 > $$
 
-If installed, the above is rendered as
-
+With Green Pi installed, the above is rendered as
 <p align="center">
 <img alt="green-pi-screenhot" src="https://nschloe.github.io/green-pi/green-pi-screenshot.png" width="90%">
 </p>
