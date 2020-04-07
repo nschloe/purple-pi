@@ -26,7 +26,7 @@ formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
 If installed, the above is rendered as
 
 <p align="center">
-<img alt="green-pi-screenhot" src="https://nschloe.github.io/green-pi/green-pi-screenhot.png" width="70%">
+<img alt="green-pi-screenhot" src="https://nschloe.github.io/green-pi/green-pi-screenshot.png" width="70%">
 </p>
 
 
