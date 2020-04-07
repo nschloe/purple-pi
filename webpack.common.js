@@ -6,8 +6,6 @@ module.exports = {
     content_script: path.join(__dirname, "src/content_script.js"),
     background: path.join(__dirname, "src/background.js"),
     mathjax: path.join(__dirname, "src/mathjax.js"),
-    mathjax_config: path.join(__dirname, "src/mathjax_config.js"),
-    mathjax_native: path.join(__dirname, "src/mathjax_native.js"),
     popup: path.join(__dirname, "src/popup.js"),
   },
   output: {
