@@ -41,13 +41,13 @@ function handleCheck(request, sender, sendResponse) {
 
 function handleInject(request, sender, sendResponse) {
   isWhitelisted(request.url, (response) => {
-    // Send an empty response to avoid warning
     if (response) {
       chrome.tabs.executeScript(
         {
           file: "mathjax.js",
         },
         () => {
+          // Send an empty response to avoid warning
           sendResponse({});
         }
       );

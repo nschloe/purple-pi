@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.prod.js && cd dist && zip -r ../green-pi.zip * && cd -",
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js",
-    "format": "prettier src/ --write"
+    "format": "prettier src/ --write",
+    "lint": "prettier src/ --check"
   },
   "author": "Nico Schlömer",
   "license": "GPL-3.0-or-later",
