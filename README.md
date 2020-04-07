@@ -3,10 +3,15 @@
   <p align="center">Beautiful math wherever you want.</p>
 </p>
 
+[![firefox users](https://img.shields.io/amo/users/green-pi?label=Firefox%20users&logo=mozilla-firefox&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 Green Pi is a browser extension that, once installed, renders LaTeX-style mathematics on
 pages that don't otherwise render math, like GitHub.
+
+Get Green Pi for
+
+  * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 
 For example [Cauchy's integral
 formula](https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula):
