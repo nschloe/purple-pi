@@ -19,7 +19,6 @@
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {
-    "mathjax-full": "^3.0.0",
-    "webextension-polyfill": "^0.6.0"
+    "mathjax-full": "^3.0.0"
   }
 }
