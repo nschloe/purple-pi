@@ -1,5 +1,4 @@
 // This is enough in chrome:
-// const fonts_url = "chrome-extension://" + chrome.runtime.id + "/fonts";
 const fonts_url = chrome.runtime.getURL("fonts");
 MathJax = {
   chtml: {
@@ -8,6 +7,7 @@ MathJax = {
 };
 require("mathjax-full/components/src/tex-chtml/tex-chtml.js");
 
+// Fruitless attempt to get things to work in Firefox:
 // (function () {
 //   var script = document.createElement("script");
 //   script.src = chrome.runtime.getURL("mathjax_config.js");
