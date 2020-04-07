@@ -3,6 +3,7 @@
   <p align="center">Beautiful math wherever you want.</p>
 </p>
 
+[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/green-pi/ci?style=flat-square)](https://github.com/nschloe/green-pi/actions?query=workflow%3Aci)
 [![firefox users](https://img.shields.io/amo/users/green-pi?label=Firefox%20users&logo=mozilla-firefox&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
