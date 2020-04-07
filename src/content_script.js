@@ -1,1 +1,1 @@
-chrome.runtime.sendMessage({ type: "inject", url: location.href }, () => {});
+chrome.runtime.sendMessage({ type: "inject", url: window.location.href }, () => {});
