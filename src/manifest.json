@@ -2,7 +2,7 @@
   "name": "Green Pi",
   "version": "0.0.2",
   "description": "Beautiful math wherever you want.",
-  "permissions": ["<all_urls>", "activeTab", "storage"],
+  "permissions": ["<all_urls>", "activeTab", "storage", "tabs"],
   "manifest_version": 2,
   "content_scripts": [
     {

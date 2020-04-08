@@ -32,6 +32,8 @@ function handleCheck(request, sender, sendResponse) {
       currentWindow: true,
     },
     (tabs) => {
+      // TODO Firefox, for tabs[0].url to work, needs the "tabs" permission.
+      // Chrome only (and correctly) needs "activeTab".
       isWhitelisted(tabs[0].url, (response) => {
         sendResponse({ isWhitelisted: response });
       });
@@ -40,21 +42,15 @@ function handleCheck(request, sender, sendResponse) {
 }
 
 function handleInject(request, sender, sendResponse) {
-  isWhitelisted(request.url, (response) => {
-    if (response) {
-      chrome.tabs.executeScript(
-        {
-          file: "mathjax.js",
-        },
-        () => {
-          // Send an empty response to avoid warning
-          sendResponse({});
-        }
-      );
-    } else {
+  chrome.tabs.executeScript(
+    {
+      file: "mathjax.js",
+    },
+    () => {
+      // Send an empty response to avoid warning
       sendResponse({});
     }
-  });
+  );
 }
 
 function handleToggle(request, sender, sendResponse) {
