@@ -59,6 +59,7 @@ function handleToggle(request, sender, sendResponse) {
       // toggle domain from whitelist
       chrome.storage.sync.get("domainWhitelist", (result) => {
         if (result.domainWhitelist.includes(domain)) {
+          // it's whitelisted, remove it from the list
           const index = result.domainWhitelist.indexOf(domain);
           if (index > -1) {
             result.domainWhitelist.splice(index, 1);
@@ -66,15 +67,40 @@ function handleToggle(request, sender, sendResponse) {
           chrome.storage.sync.set(
             { domainWhitelist: result.domainWhitelist },
             () => {
-              sendResponse({ isWhitelisted: false });
+              chrome.browserAction.setIcon(
+                {
+                  path: {
+                    16: "images/logo-gray16.png",
+                    32: "images/logo-gray32.png",
+                    48: "images/logo-gray48.png",
+                    128: "images/logo-gray128.png",
+                  },
+                },
+                () => {
+                  sendResponse({ isWhitelisted: false });
+                }
+              );
             }
           );
         } else {
+          // it's not whitelisted, add it to the list
           result.domainWhitelist.push(domain);
           chrome.storage.sync.set(
             { domainWhitelist: result.domainWhitelist },
             () => {
-              sendResponse({ isWhitelisted: true });
+              chrome.browserAction.setIcon(
+                {
+                  path: {
+                    16: "images/logo16.png",
+                    32: "images/logo32.png",
+                    48: "images/logo48.png",
+                    128: "images/logo128.png",
+                  },
+                },
+                () => {
+                  sendResponse({ isWhitelisted: true });
+                }
+              );
             }
           );
         }
