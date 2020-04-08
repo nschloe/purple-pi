@@ -1,4 +1,5 @@
-chrome.runtime.sendMessage(
-  { type: "inject", url: window.location.href },
-  () => {}
-);
+chrome.runtime.sendMessage({ type: "checkIfWhitelisted" }, (response) => {
+  if (response.isWhitelisted) {
+    chrome.runtime.sendMessage({ type: "inject" });
+  }
+});
