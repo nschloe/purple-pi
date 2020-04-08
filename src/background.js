@@ -42,15 +42,9 @@ function handleCheck(request, sender, sendResponse) {
 }
 
 function handleInject(request, sender, sendResponse) {
-  chrome.tabs.executeScript(
-    {
-      file: "mathjax.js",
-    },
-    () => {
-      // Send an empty response to avoid warning
-      sendResponse({});
-    }
-  );
+  chrome.tabs.executeScript({
+    file: "mathjax.js",
+  });
 }
 
 function handleToggle(request, sender, sendResponse) {
@@ -99,4 +93,41 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   // async sendResponse
   return true;
+});
+
+function changeIcon() {
+  //query the information on the active tab
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    // TODO Firefox, for tabs[0].url to work, needs the "tabs" permission.
+    // Chrome only (and correctly) needs "activeTab".
+    isWhitelisted(tabs[0].url, (response) => {
+      if (response) {
+        chrome.browserAction.setIcon({
+          path: {
+            16: "images/logo16.png",
+            32: "images/logo32.png",
+            48: "images/logo48.png",
+            128: "images/logo128.png",
+          },
+        });
+      } else {
+        chrome.browserAction.setIcon({
+          path: {
+            16: "images/logo-gray16.png",
+            32: "images/logo-gray32.png",
+            48: "images/logo-gray48.png",
+            128: "images/logo-gray128.png",
+          },
+        });
+      }
+    });
+  });
+}
+
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  changeIcon();
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  changeIcon();
 });
