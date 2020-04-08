@@ -4,6 +4,7 @@
 </p>
 
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/green-pi/ci?style=flat-square)](https://github.com/nschloe/green-pi/actions?query=workflow%3Aci)
+[![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![firefox users](https://img.shields.io/amo/users/green-pi?label=Firefox%20users&logo=mozilla-firefox&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
@@ -12,6 +13,7 @@ pages that don't otherwise render math, like GitHub.
 
 Get Green Pi for
 
+  * [Chrome](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
   * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 
 For example Cauchy's integral formula:
