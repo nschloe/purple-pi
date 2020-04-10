@@ -61,6 +61,7 @@ npm run build
 
  * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)
  * [Or Sharir's MathJax Plugin for Github](https://github.com/orsharir/github-mathjax)
+ * [Ellis Michael's TeX All the Things](https://github.com/emichael/texthings)
 
 
 ### License
