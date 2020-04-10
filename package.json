@@ -1,6 +1,6 @@
 {
   "name": "green-pi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Beautiful math wherever you want.",
   "repository": "https://github.com/nschloe/green-pi",
   "scripts": {
@@ -21,6 +21,6 @@
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {
-    "mathjax-full": "^3.0.0"
+    "mathjax-full": "^3.0.4"
   }
 }
