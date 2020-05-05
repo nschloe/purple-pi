@@ -9,7 +9,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d5b1?style=flat-square)](https://github.com/nschloe/green-pi?activate=true)
 
-<a id="green-pi "href="https://github.com/nschloe/green-pi?activate=true">empty</a>
+<a id="green-pi" href="https://github.com/nschloe/green-pi?activate=true">empty</a>
 
 Green Pi is a browser extension that, once installed, renders LaTeX-style mathematics on
 pages that don't otherwise render math, like GitHub.
