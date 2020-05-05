@@ -12,4 +12,18 @@ for (link of document.getElementsByTagName("a")) {
   }
 }
 
+// mathjax config
+window.MathJax = {
+  chtml: {
+    fontURL: chrome.runtime.getURL("fonts"),
+  },
+};
+if (params["inlineMath"] === "$") {
+  window.MathJax.tex = {
+    inlineMath: [
+      ["$", "$"]
+    ]
+  };
+}
+
 chrome.runtime.sendMessage({ params: params }, (response) => {});
