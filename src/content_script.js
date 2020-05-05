@@ -3,10 +3,10 @@ for (link of document.getElementsByTagName("a")) {
   const url = new URL(link.href);
   if (url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
     if (url.searchParams.has("activate")) {
-        params["activate"] = true;
+      params["activate"] = true;
     }
     if (url.searchParams.has("inlineMath")) {
-        params["inlineMath"] = url.searchParams.get("inlineMath");;
+      params["inlineMath"] = url.searchParams.get("inlineMath");
     }
   }
 }
