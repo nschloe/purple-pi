@@ -9,7 +9,3 @@ document.getElementById("appinfo").textContent =
   manifestData.name + " " + manifestData.version;
 
 chrome.runtime.sendMessage({ type: "checkIfWhitelisted" }, handleResponse);
-
-document.getElementById("myButton").addEventListener("click", () => {
-  chrome.runtime.sendMessage({ type: "toggleWhitelist" }, handleResponse);
-});
