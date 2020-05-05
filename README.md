@@ -7,7 +7,7 @@
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![firefox users](https://img.shields.io/amo/users/green-pi?label=Firefox%20users&logo=mozilla-firefox&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d5b1?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
+[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d571?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
 
 Green Pi is a browser extension that, once installed, renders LaTeX-style mathematics on
 pages that don't otherwise render math, like GitHub.
@@ -24,7 +24,7 @@ Install the browser extension:
 Specify that the page contains math by adding a link to Green Pi on the page, e.g., in
 form of the badge
 ```
-[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d5b1?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
+[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d571?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
 ```
 (Note the URL parameters `activate` and `inlineMath=$` here. [The default inline math
 delimiters are `\\(` and
