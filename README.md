@@ -1,3 +1,5 @@
+<green-pi/>
+
 <p align="center">
   <a href="https://github.com/nschloe/green-pi"><img alt="green-pi" src="https://nschloe.github.io/green-pi/logo-with-text.svg" width="60%"></a>
   <p align="center">Beautiful math wherever you want.</p>
