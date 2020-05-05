@@ -7,38 +7,55 @@
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![firefox users](https://img.shields.io/amo/users/green-pi?label=Firefox%20users&logo=mozilla-firefox&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d5b1?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
 
 Green Pi is a browser extension that, once installed, renders LaTeX-style mathematics on
 pages that don't otherwise render math, like GitHub.
 
-Get Green Pi for
+### Users
+
+Install the browser extension:
 
   * [Chrome](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
   * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
 
-For example Cauchy's integral formula:
+### Authors
+
+Specify that the page contains math by adding a link to Green Pi on the page, e.g., in
+form of the badge
+```
+[![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d5b1?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
+```
+(Note the URL parameters `activate` and `inlineMath=$` here. [The default inline math
+delimiters are `\\(` and
+`\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)
+
+### Example
+
+Cauchy's integral formula:
 
 ```
-Let \\(U\\) be an open subset of the complex plane \\(\mathbb{C}\\), and suppose the
-closed disk \\(D\\) defined as
+Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed disk
+$D$ defined as
 $$
 D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
 $$
-is completely contained in \\(U\\). Let \\(f: U\to\mathbb{C}\\) be a holomorphic
-function, and let \\(\gamma\\) be the circle, oriented counterclockwise, forming the
-boundary of \\(D\\). Then for every \\(a\\) in the interior of \\(D\\),
+is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
+let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$. Then
+for every $a$ in the interior of $D$,
 $$
 f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 $$
 ```
-> Let \\(U\\) be an open subset of the complex plane \\(\mathbb{C}\\), and suppose the
-> closed disk \\(D\\) defined as
+
+> Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed
+> disk $D$ defined as
 > $$
 > D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
 > $$
-> is completely contained in \\(U\\). Let \\(f: U\to\mathbb{C}\\) be a holomorphic
-> function, and let \\(\gamma\\) be the circle, oriented counterclockwise, forming the
-> boundary of \\(D\\). Then for every \\(a\\) in the interior of \\(D\\),
+> is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
+> let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$.
+> Then for every $a$ in the interior of $D$,
 > $$
 > f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 > $$

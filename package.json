@@ -1,6 +1,6 @@
 {
   "name": "green-pi",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Beautiful math wherever you want.",
   "repository": "https://github.com/nschloe/green-pi",
   "scripts": {
