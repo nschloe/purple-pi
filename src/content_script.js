@@ -4,7 +4,7 @@ for (link of document.getElementsByTagName("a")) {
   if (url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
     for(pair of url.searchParams.entries()) {
       if (pair[0] === "activate") {
-        params[pair[0]] = (pair[1] === "true");
+        params[pair[0]] = true;
       } else {
         params[pair[0]] = pair[1];
       }
