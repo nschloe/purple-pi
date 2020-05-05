@@ -24,7 +24,6 @@
     "fonts/*"
   ],
   "browser_action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "images/logo-gray16.png",
       "32": "images/logo-gray32.png",
