@@ -2,12 +2,11 @@ var params = {};
 for (link of document.getElementsByTagName("a")) {
   const url = new URL(link.href);
   if (url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
-    for (pair of url.searchParams.entries()) {
-      if (pair[0] === "activate") {
-        params[pair[0]] = true;
-      } else {
-        params[pair[0]] = pair[1];
-      }
+    if (url.searchParams.has("activate")) {
+        params["activate"] = true;
+    }
+    if (url.searchParams.has("inlineMath")) {
+        params["inlineMath"] = url.searchParams.get("inlineMath");;
     }
   }
 }
