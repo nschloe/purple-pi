@@ -26,9 +26,35 @@ form of the badge
 ```
 [![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d571?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
 ```
-(Note the URL parameters `activate` and `inlineMath=$` here. [The default inline math
+Note the URL parameters `activate` and `inlineMath=$` here. ([The default inline math
 delimiters are `\\(` and
-`\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)
+`\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)) Other options with
+their default values:
+```js
+// input options
+"processEscapes": true       // use \$ to produce a literal dollar sign
+"processEnvironments": true  // process \begin{xxx}...\end{xxx} outside math mode
+"processRefs": true          // process \ref{...} outside of math mode
+"tags": 'none'               // or 'ams' or 'all'
+"tagSide":'right'            // side for \tag macros
+"tagIndent"'0.8em'           // amount to indent tags
+"useLabelIds": true          // use label name rather than tag for ids
+"multlineWidth": '85%'       // width of multline environment
+"maxMacros":  1000           // maximum number of macro substitutions per expression
+"maxBuffer": 5 * 1024        // maximum size for the internal TeX string (5K)
+
+// output options
+"scale": 1                   // global scaling factor for all expressions
+"minScale": .5               // smallest scaling factor to use
+"matchFontHeight": true      // true to match ex-height of surrounding font
+"mtextInheritFont": false    // true to make mtext elements use surrounding font
+"merrorInheritFont": true    // true to make merror text use surrounding font
+"mathmlSpacing":  false      // true for MathML spacing rules, false for TeX rules
+"exFactor":  .5              // default size of ex in em units
+"displayAlign": 'center'     // default for indentalign when set to 'auto'
+"displayIndent":  '0'        // default for indentshift when set to 'auto'
+"adaptiveCSS": true          // true means only produce CSS that is used in the processed equation
+```
 
 ### Example
 
