@@ -44,8 +44,13 @@ const numberOptionsChtml = ["scale", "minScale", "exFactor"];
 var activate = false;
 var params = {};
 for (link of document.getElementsByTagName("a")) {
-  const url = new URL(link.href);
-  if (url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
+  var url;
+  try {
+    url = new URL(link.href);
+  } catch(err) {
+    url = null;
+  }
+  if (url && url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
     // https://docs.mathjax.org/en/latest/options/input/tex.html
     // collect Boolean options
     booleanOptionsTex.concat(booleanOptionsChtml).forEach((item, index) => {
