@@ -41,6 +41,7 @@ const booleanOptionsChtml = [
 const stringOptionsChtml = ["displayAlign", "displayIndent"];
 const numberOptionsChtml = ["scale", "minScale", "exFactor"];
 
+var activate = false;
 var params = {};
 for (link of document.getElementsByTagName("a")) {
   const url = new URL(link.href);
@@ -70,35 +71,36 @@ for (link of document.getElementsByTagName("a")) {
     });
     // collect activation
     if (url.searchParams.has("activate")) {
-      params["activate"] = true;
+      activate = true;
       break;
     }
   }
 }
 
-// mathjax config
-window.MathJax = {
-  tex: {},
-  chtml: {
-    fontURL: chrome.runtime.getURL("fonts"),
-  },
-};
-// set options
-booleanOptionsTex
-  .concat(stringOptionsTex)
-  .concat(numberOptionsTex)
-  .forEach((item, index) => {
-    if (params.hasOwnProperty(item)) {
-      window.MathJax.tex[item] = params[item];
-    }
-  });
-booleanOptionsChtml
-  .concat(stringOptionsChtml)
-  .concat(numberOptionsChtml)
-  .forEach((item, index) => {
-    if (params.hasOwnProperty(item)) {
-      window.MathJax.chtml[item] = params[item];
-    }
-  });
-
-chrome.runtime.sendMessage({ params: params }, (response) => {});
+if (activate) {
+  // mathjax config
+  window.MathJax = {
+    tex: {},
+    chtml: {
+      fontURL: chrome.runtime.getURL("fonts"),
+    },
+  };
+  // set options
+  booleanOptionsTex
+    .concat(stringOptionsTex)
+    .concat(numberOptionsTex)
+    .forEach((item, index) => {
+      if (params.hasOwnProperty(item)) {
+        window.MathJax.tex[item] = params[item];
+      }
+    });
+  booleanOptionsChtml
+    .concat(stringOptionsChtml)
+    .concat(numberOptionsChtml)
+    .forEach((item, index) => {
+      if (params.hasOwnProperty(item)) {
+        window.MathJax.chtml[item] = params[item];
+      }
+    });
+  chrome.runtime.sendMessage({ params: params }, (response) => {});
+}
