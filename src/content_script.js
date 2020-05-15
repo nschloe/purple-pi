@@ -47,10 +47,14 @@ for (link of document.getElementsByTagName("a")) {
   var url;
   try {
     url = new URL(link.href);
-  } catch(err) {
+  } catch (err) {
     url = null;
   }
-  if (url && url.hostname == "github.com" && url.pathname == "/nschloe/green-pi") {
+  if (
+    url &&
+    url.hostname == "github.com" &&
+    url.pathname == "/nschloe/green-pi"
+  ) {
     // https://docs.mathjax.org/en/latest/options/input/tex.html
     // collect Boolean options
     booleanOptionsTex.concat(booleanOptionsChtml).forEach((item, index) => {
