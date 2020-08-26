@@ -12,12 +12,14 @@ module.exports = {
     filename: "[name].js"
   },
   plugins: [
-        new CopyWebpackPlugin([
+        new CopyWebpackPlugin({
+          patterns: [
             { from: 'src/manifest.json' },
             { from: './node_modules/mathjax-full/ts/output/chtml/fonts/tex-woff-v2/', to: 'fonts/' },
             { from: './images/*.png' },
             { from: './images/logo.svg', to: 'images/' },
             { from: './images/logo-gray.svg', to: 'images/' }
-        ])
+        ]
+      })
     ]
 };
