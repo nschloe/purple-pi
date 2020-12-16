@@ -13,12 +13,11 @@
   "author": "Nico Schlömer",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "copy-webpack-plugin": "^6.1.1",
-    "prettier": "^2.1.2",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "prettier": "^2.2.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-merge": "^5.1.4"
+    "webpack-merge": "^5.7.2"
   },
   "dependencies": {
     "mathjax-full": "^3.1.2"
