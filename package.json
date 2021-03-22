@@ -1,6 +1,6 @@
 {
   "name": "green-pi",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Beautiful math wherever you want.",
   "repository": "https://github.com/nschloe/green-pi",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Nico Schlömer",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^8.0.0",
     "prettier": "^2.2.1",
     "webpack": "^5.10.3",
     "webpack-cli": "^4.2.0",
