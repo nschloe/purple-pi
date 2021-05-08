@@ -22,15 +22,22 @@ Install the browser extension:
 
 ### Authors
 
-Specify that the page contains math by adding a link to Green Pi on the page, e.g., in
-form of the badge
-```
+Specify that the page contains math by adding a link to Green Pi on the page, e.g.,
+```markdown
+https://github.com/nschloe/green-pi?activate&inlineMath=$
+
+# or as a badge:
 [![green-pi](https://img.shields.io/badge/Rendered%20with-Green%20Pi-00d571?style=flat-square)](https://github.com/nschloe/green-pi?activate&inlineMath=$)
 ```
-Note the URL parameters `activate` and `inlineMath=$` here. ([The default inline math
-delimiters are `\\(` and
-`\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)) Other options with
-their default values:
+This is also used to communicate options to MathJax; note the URL parameters `activate`
+and `inlineMath=$`. ([The default inline math delimiters are `\\(` and
+`\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)) Only the first such
+link in a page is considered.
+
+The reason why Green Pi uses links for activation is that you can use them almost
+everywhere: GitHub pages, StackOverflow posts, etc.
+
+Other options with their default values:
 ```js
 // input options
 "processEscapes": true       // use \$ to produce a literal dollar sign
