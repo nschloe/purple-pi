@@ -108,6 +108,17 @@ npm run build
 ```
 
 
+### Development
+
+```
+npm install
+npm run watch
+```
+The unpacked development version of the extension will then be in `dist/`. Open Google
+Chrome, go to `chrome://extensions` and `Load unpacked` this directory. Reload as
+necessary.
+
+
 ### Related projects
 
  * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)
