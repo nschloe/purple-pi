@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   chrome.scripting.executeScript(
     {
-      target: {tabId: sender.tab.id},
+      target: { tabId: sender.tab.id },
       files: ["mathjax.js"],
     },
     () => {
