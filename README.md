@@ -18,7 +18,7 @@ pages that don't otherwise render math, like GitHub.
 Install the browser extension:
 
   * [Chrome](https://chrome.google.com/webstore/detail/green-pi/ingbbliecffofmmokknelnijicfcgolb)
-  * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi)
+  * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/green-pi/)
 
 ### Authors
 
@@ -37,9 +37,12 @@ link in a page is considered.
 The reason why Green Pi uses links for activation is that you can use them almost
 everywhere: GitHub pages, StackOverflow posts, etc.
 
-Other options with their default values:
+All options with their default values:
 ```js
+"activate"                   // no value; if absent, math is not rendered
+
 // input options
+"inlineMath": ()             // which delimiters to use
 "processEscapes": true       // use \$ to produce a literal dollar sign
 "processEnvironments": true  // process \begin{xxx}...\end{xxx} outside math mode
 "processRefs": true          // process \ref{...} outside of math mode
@@ -48,7 +51,7 @@ Other options with their default values:
 "tagIndent"'0.8em'           // amount to indent tags
 "useLabelIds": true          // use label name rather than tag for ids
 "multlineWidth": '85%'       // width of multline environment
-"maxMacros":  1000           // maximum number of macro substitutions per expression
+"maxMacros": 1000            // maximum number of macro substitutions per expression
 "maxBuffer": 5 * 1024        // maximum size for the internal TeX string (5K)
 
 // output options
@@ -57,10 +60,10 @@ Other options with their default values:
 "matchFontHeight": true      // true to match ex-height of surrounding font
 "mtextInheritFont": false    // true to make mtext elements use surrounding font
 "merrorInheritFont": true    // true to make merror text use surrounding font
-"mathmlSpacing":  false      // true for MathML spacing rules, false for TeX rules
-"exFactor":  .5              // default size of ex in em units
+"mathmlSpacing": false       // true for MathML spacing rules, false for TeX rules
+"exFactor": .5               // default size of ex in em units
 "displayAlign": 'center'     // default for indentalign when set to 'auto'
-"displayIndent":  '0'        // default for indentshift when set to 'auto'
+"displayIndent": '0'         // default for indentshift when set to 'auto'
 "adaptiveCSS": true          // true means only produce CSS that is used in the processed equation
 ```
 
