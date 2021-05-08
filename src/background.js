@@ -1,5 +1,4 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("background hello");
   chrome.scripting.executeScript(
     {
       target: {tabId: sender.tab.id},

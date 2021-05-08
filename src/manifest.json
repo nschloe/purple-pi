@@ -20,10 +20,10 @@
     "48": "images/logo48.png",
     "128": "images/logo128.png"
   },
-  "_web_accessible_resources": [
+  "web_accessible_resources": [
     {
       "resources": ["fonts/*"],
-      "matches": ["*"]
+      "matches": ["<all_urls>"]
     }
   ],
   "action": {
