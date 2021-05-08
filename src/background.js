@@ -1,10 +1,12 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  chrome.tabs.executeScript(
+  console.log("background hello");
+  chrome.scripting.executeScript(
     {
-      file: "mathjax.js",
+      target: {tabId: sender.tab.id},
+      files: ["mathjax.js"],
     },
     () => {
-      chrome.browserAction.setIcon(
+      chrome.action.setIcon(
         {
           path: {
             16: "images/logo16.png",
