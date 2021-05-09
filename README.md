@@ -13,9 +13,9 @@ Purple Pi is a browser extension for Google Chrome that renders LaTeX-style math
 on pages that don't otherwise support it. Examples are GitHub READMEs and Wikis or
 StackOverflow posts.
 
-Simply install the extension from
+Simply install the extension from the
 
-  * [Chrome](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
+  * [Chrome Web Store](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 
 and enjoy _Cauchy's integral formula_:
 
