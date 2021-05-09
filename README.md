@@ -11,7 +11,7 @@
 
 $$
 i\\hbar \\frac{\\partial}{\\partial t} \\left|\psi(t)\\right\\rangle
-= \\hat{H}\\|left\\psi(t)\\right\\rangle
+= \\hat{H}\\left|\\psi(t)\\right\\rangle
 $$
 
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics

@@ -1,7 +1,7 @@
 {
-  "name": "Green Pi",
+  "name": "Purple Pi",
   "version": "0.1.6",
-  "description": "Beautiful math wherever you want.",
+  "description": "LaTeX math wherever you want.",
   "permissions": ["scripting"],
   "host_permissions": ["<all_urls>"],
   "manifest_version": 3,
