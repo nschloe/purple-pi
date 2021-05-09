@@ -1,6 +1,6 @@
 {
   "name": "Purple Pi",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "LaTeX math wherever you want.",
   "permissions": ["scripting"],
   "host_permissions": ["<all_urls>"],
@@ -32,11 +32,6 @@
       "32": "images/logo-gray32.png",
       "48": "images/logo-gray48.png",
       "128": "images/logo-gray128.png"
-    }
-  },
-  "applications": {
-    "gecko": {
-      "id": "{006969c6-f5e7-4dd6-ae1b-699fdf0e99a0}"
     }
   }
 }

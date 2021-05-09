@@ -6,7 +6,7 @@
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/purple-pi/ci?style=flat-square)](https://github.com/nschloe/purple-pi/actions?query=workflow%3Aci)
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-800080?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
+[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
 [![Discord](https://img.shields.io/static/v1?logo=discord&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
 
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
@@ -44,7 +44,7 @@ Rendered with <a href="https://github.com/nschloe/purple-pi?activate">Purple Pi<
 ```
 or as a badge
 ```
-[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-800080?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
+[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
 ```
 The extension will then inject [MathJax](https://www.mathjax.org/) into the page.
 The link is also used to communicate options to MathJax; note the URL parameters
@@ -95,7 +95,7 @@ npm run build
 ### Development
 
 ```
-npm install
+npm ci
 npm run watch
 ```
 The unpacked development version of the extension will then be in `dist/`. Open Google
