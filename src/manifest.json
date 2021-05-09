@@ -1,6 +1,6 @@
 {
   "name": "Purple Pi",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "LaTeX math wherever you want.",
   "permissions": ["scripting"],
   "host_permissions": ["<all_urls>"],
