@@ -95,7 +95,7 @@ npm run build
 ### Development
 
 ```
-npm install
+npm ci
 npm run watch
 ```
 The unpacked development version of the extension will then be in `dist/`. Open Google
