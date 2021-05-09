@@ -53,7 +53,7 @@ for (link of document.getElementsByTagName("a")) {
   if (
     url &&
     url.hostname == "github.com" &&
-    url.pathname == "/nschloe/green-pi"
+    url.pathname == "/nschloe/purple-pi"
   ) {
     // https://docs.mathjax.org/en/latest/options/input/tex.html
     // collect Boolean options
