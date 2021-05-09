@@ -9,29 +9,36 @@
 [![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-800080?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
 [![Discord](https://img.shields.io/static/v1?logo=discord&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
 
-$$
-i\\hbar \\frac{\\partial}{\\partial t} \\left|\psi(t)\\right\\rangle
-= \\hat{H}\\left|\\psi(t)\\right\\rangle
-$$
-
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
 on pages that don't otherwise support it. Examples are GitHub READMEs and Wikis or
 StackOverflow posts.
 
-### Users
-
-Install the browser extension:
+Simply install the extension from
 
   * [Chrome](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 
+and enjoy _Cauchy's integral formula_:
+
+> Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed
+> disk $D$ defined as
+> $$
+> D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
+> $$
+> is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
+> let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$.
+> Then for every $a$ in the interior of $D$,
+> $$
+> f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
+> $$
+
+
 ### Authors
 
-Specify that the page contains math by adding an _activation link_ to Purple Pi on the
-page, e.g.,
+Purple Pi only runs on web pages which contain the _activation link_
 ```markdown
 https://github.com/nschloe/purple-pi?activate
 ```
-or
+You can add as an `<a>` tag
 ```
 Rendered with <a href="https://github.com/nschloe/purple-pi?activate">Purple Pi</a>.
 ```
@@ -76,42 +83,6 @@ All options with their default values:
 "displayIndent": '0'         // default for indentshift when set to 'auto'
 "adaptiveCSS": true          // true means only produce CSS that is used in the processed equation
 ```
-
-### Example
-
-Cauchy's integral formula:
-
-```
-Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed disk
-$D$ defined as
-$$
-D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
-$$
-is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
-let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$. Then
-for every $a$ in the interior of $D$,
-$$
-f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
-$$
-```
-
-> Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed
-> disk $D$ defined as
-> $$
-> D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
-> $$
-> is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
-> let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$.
-> Then for every $a$ in the interior of $D$,
-> $$
-> f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
-> $$
-
-With Purple Pi installed, the above is rendered as
-<p align="center">
-<img alt="purple-pi-screenhot" src="https://nschloe.github.io/purple-pi/purple-pi-screenshot.png" width="90%">
-</p>
-
 
 ### Build instructions
 
