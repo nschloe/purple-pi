@@ -10,8 +10,10 @@
 [![Discord](https://img.shields.io/static/v1?logo=discord&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
 
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
-on pages that don't otherwise support it. Examples are GitHub READMEs and Wikis or
-StackOverflow posts.
+on pages that don't otherwise support it. Examples are [GitHub
+READMEs](https://github.com/nschloe/ndim#the-formulas) and
+[Wikis](https://github.com/nschloe/purple-pi/wiki/Gallery) or
+[StackOverflow posts](https://stackoverflow.com/a/63796209/353337).
 
 Simply install the extension from the
 
