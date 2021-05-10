@@ -1,8 +1,8 @@
 {
   "name": "Purple Pi",
-  "version": "0.2.0",
-  "description": "LaTeX math wherever you want.",
-  "permissions": ["scripting"],
+  "version": "0.2.1",
+  "description": "LaTeX math wherever you want",
+  "permissions": ["scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "manifest_version": 3,
   "content_scripts": [
