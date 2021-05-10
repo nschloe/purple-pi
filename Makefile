@@ -7,7 +7,10 @@ update:
 	npm outdated
 
 format:
-	prettier -w src/
+	npm run format
+
+lint:
+	npm run lint
 
 clean:
 	rm -rf dist/ node_modules/ purple-pi.zip
