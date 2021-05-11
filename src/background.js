@@ -24,44 +24,39 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
       return;
     }
     // multiple executeScript: <https://stackoverflow.com/q/21535233/353337>
-    chrome.scripting.executeScript(
-      {
+    chrome.scripting
+      .executeScript({
         target: { tabId: tabId },
         files: ["katex.js"],
-      },
-      () => {
-        chrome.scripting.executeScript(
+      })
+      .then(() => {
+        chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: ["auto-render.js"],
+        });
+      })
+      .then(() => {
+        chrome.scripting.insertCSS({
+          target: { tabId: tabId },
+          // webpack compiles the katex.less to background.css
+          files: ["background.css"],
+        });
+      })
+      .then(() => {
+        chrome.action.setIcon(
           {
-            target: { tabId: tabId },
-            files: ["auto-render.js"],
+            tabId: tabId,
+            path: {
+              16: "images/logo16.png",
+              32: "images/logo32.png",
+              48: "images/logo48.png",
+              128: "images/logo128.png",
+            },
           },
           () => {
-            chrome.scripting.insertCSS(
-              {
-                target: { tabId: tabId },
-                // webpack compiles the katex.less to background.css
-                files: ["background.css"],
-              },
-              () => {
-                chrome.action.setIcon(
-                  {
-                    tabId: tabId,
-                    path: {
-                      16: "images/logo16.png",
-                      32: "images/logo32.png",
-                      48: "images/logo48.png",
-                      128: "images/logo128.png",
-                    },
-                  },
-                  () => {
-                    chrome.tabs.sendMessage(tabId, "render-math");
-                  }
-                );
-              }
-            );
+            chrome.tabs.sendMessage(tabId, "render-math");
           }
         );
-      }
-    );
+      });
   });
 });
