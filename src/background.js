@@ -62,6 +62,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
               128: "images/logo128.png",
             },
           },
+          // Actually, we could send the message before setIcon has completed. This
+          // however leads to an inconsistent behavior or KaTeX. Sometimes, the math is
+          // rendered, sometimes not. Perhaps a timing issue within KaTeX? Anyway, leave
+          // this here.
           () => {
             chrome.tabs.sendMessage(tabId, "render-math");
           }
