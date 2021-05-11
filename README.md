@@ -50,8 +50,8 @@ or as a badge
 ```
 [![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
 ```
-The extension will then inject [MathJax](https://www.mathjax.org/) into the page.
-The link is also used to communicate options to MathJax; note the URL parameters
+The extension will then inject [KaTeX](https://katex.org/) into the page.
+The link is also used to communicate options to KaTeX; note the URL parameters
 `activate` and `inlineMath=$`. ([The default inline math delimiters are `\\(` and
 `\\)`.](https://docs.mathjax.org/en/latest/options/input/tex.html)) Only the first Purple
 Pi activation link in a page is considered. The reason why Purple Pi uses links for
