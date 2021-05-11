@@ -6,6 +6,9 @@
 // than not at all.
 // Alternatively, we could wait for events like webNavigation.onHistoryStateUpdated or
 // webNavigation.onCompleted.
+
+require("../node_modules/katex/src/katex.less");
+
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   if (changeInfo.status !== "complete") {
     return;
@@ -35,7 +38,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
             chrome.scripting.insertCSS(
               {
                 target: { tabId: tabId },
-                files: ["katex.css"],
+                files: ["background.css"],
               },
               () => {
                 chrome.action.setIcon(
