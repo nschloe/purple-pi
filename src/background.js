@@ -19,21 +19,43 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
     if (!response.inject) {
       return;
     }
+    // multiple executeScript: <https://stackoverflow.com/q/21535233/353337>
     chrome.scripting.executeScript(
       {
         target: { tabId: tabId },
-        files: ["mathjax.js"],
+        files: ["katex.js"],
       },
       () => {
-        chrome.action.setIcon({
-          path: {
-            16: "images/logo16.png",
-            32: "images/logo32.png",
-            48: "images/logo48.png",
-            128: "images/logo128.png",
+        chrome.scripting.executeScript(
+          {
+            target: { tabId: tabId },
+            files: ["auto-render.js"],
           },
-          tabId: tabId,
-        });
+          () => {
+            chrome.scripting.insertCSS(
+              {
+                target: { tabId: tabId },
+                files: ["katex.css"],
+              },
+              () => {
+                chrome.action.setIcon(
+                  {
+                    tabId: tabId,
+                    path: {
+                      16: "images/logo16.png",
+                      32: "images/logo32.png",
+                      48: "images/logo48.png",
+                      128: "images/logo128.png",
+                    },
+                  },
+                  () => {
+                    chrome.tabs.sendMessage(tabId, "render-math");
+                  }
+                );
+              }
+            );
+          }
+        );
       }
     );
   });

@@ -20,6 +20,6 @@
     "webpack-merge": "^5.7.2"
   },
   "dependencies": {
-    "mathjax-full": "^3.1.4"
+    "katex": "^0.13.9"
   }
 }

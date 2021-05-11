@@ -97,30 +97,50 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
     return;
   }
 
-  // mathjax config
-  window.MathJax = {
-    tex: {},
-    chtml: {
-      fontURL: chrome.runtime.getURL("fonts"),
-    },
-  };
-  // set options
-  booleanOptionsTex
-    .concat(stringOptionsTex)
-    .concat(numberOptionsTex)
-    .forEach((item) => {
-      if (params.hasOwnProperty(item)) {
-        window.MathJax.tex[item] = params[item];
-      }
-    });
-  booleanOptionsChtml
-    .concat(stringOptionsChtml)
-    .concat(numberOptionsChtml)
-    .forEach((item) => {
-      if (params.hasOwnProperty(item)) {
-        window.MathJax.chtml[item] = params[item];
-      }
-    });
+  // // mathjax config
+  // window.MathJax = {
+  //   tex: {},
+  //   chtml: {
+  //     fontURL: chrome.runtime.getURL("fonts"),
+  //   },
+  // };
+  // // set options
+  // booleanOptionsTex
+  //   .concat(stringOptionsTex)
+  //   .concat(numberOptionsTex)
+  //   .forEach((item) => {
+  //     if (params.hasOwnProperty(item)) {
+  //       window.MathJax.tex[item] = params[item];
+  //     }
+  //   });
+  // booleanOptionsChtml
+  //   .concat(stringOptionsChtml)
+  //   .concat(numberOptionsChtml)
+  //   .forEach((item) => {
+  //     if (params.hasOwnProperty(item)) {
+  //       window.MathJax.chtml[item] = params[item];
+  //     }
+  //   });
   // chrome.runtime.sendMessage({ params: params }, (response) => {});
   sendResponse({ inject: true });
+});
+
+chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
+  if (message !== "render-math") {
+    return;
+  }
+  console.log(renderMathInElement);
+  // renderMathInElement(document.body);
+  renderMathInElement(document.body, {
+    // customised options
+    // • auto-render specific keys, e.g.:
+    delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+    ],
+    // • rendering keys, e.g.:
+    throwOnError : false
+  });
 });

@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     content_script: path.join(__dirname, "src/content_script.js"),
     background: path.join(__dirname, "src/background.js"),
-    mathjax: path.join(__dirname, "src/mathjax.js"),
+    // katex: path.join(__dirname, "src/katex.js")
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -15,7 +15,10 @@ module.exports = {
         new CopyWebpackPlugin({
           patterns: [
             { from: 'src/manifest.json' },
-            { from: './node_modules/mathjax-full/ts/output/chtml/fonts/tex-woff-v2/', to: 'fonts/' },
+            { from: './node_modules/katex/dist/katex.js' },
+            { from: './node_modules/katex/dist/contrib/auto-render.js' },
+            { from: './node_modules/katex/dist/katex.css' },
+            { from: './node_modules/katex/dist/fonts/*.woff2', to: 'fonts/' },
             { from: './images/*.png' },
             { from: './images/logo.svg', to: 'images/' },
             { from: './images/logo-gray.svg', to: 'images/' }
