@@ -67,7 +67,5 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
           }
         );
       });
-    // return sendMessage is async
-    return true;
   });
 });
