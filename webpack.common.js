@@ -18,7 +18,8 @@ module.exports = {
             { from: './node_modules/katex/dist/katex.js' },
             { from: './node_modules/katex/dist/contrib/auto-render.js' },
             { from: './node_modules/katex/dist/katex.css' },
-            { from: './node_modules/katex/dist/fonts/*.woff2', to: 'fonts/' },
+            // https://stackoverflow.com/a/67084208/353337
+            { from: './node_modules/katex/dist/fonts/*.woff2', to: 'fonts/[name].woff2' },
             { from: './images/*.png' },
             { from: './images/logo.svg', to: 'images/' },
             { from: './images/logo-gray.svg', to: 'images/' }
