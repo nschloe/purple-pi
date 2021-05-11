@@ -41,12 +41,7 @@ const booleanOptionsChtml = [
 const stringOptionsChtml = ["displayAlign", "displayIndent"];
 const numberOptionsChtml = ["scale", "minScale", "exFactor"];
 
-chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
-  if (message !== "get-inject") {
-    sendResponse({ inject: false });
-    return;
-  }
-
+const getInject = () => {
   var activate = false;
   var params = {};
   for (link of document.getElementsByTagName("a")) {
@@ -91,10 +86,29 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
       }
     }
   }
+  return activate;
+};
 
-  if (!activate) {
-    sendResponse({ inject: false });
-    return;
+const renderMath = () => {
+  renderMathInElement(document.body, {
+    // customised options
+    // • auto-render specific keys, e.g.:
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "\\[", right: "\\]", display: true },
+    ],
+    // • rendering keys, e.g.:
+    throwOnError: false,
+  });
+};
+
+chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
+  if (message === "get-inject") {
+    sendResponse({ inject: getInject() });
+  } else if (message === "render-math") {
+    renderMath();
   }
 
   // // mathjax config
@@ -122,25 +136,5 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
   //     }
   //   });
   // chrome.runtime.sendMessage({ params: params }, (response) => {});
-  sendResponse({ inject: true });
-});
-
-chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
-  if (message !== "render-math") {
-    return;
-  }
-  console.log(renderMathInElement);
-  // renderMathInElement(document.body);
-  renderMathInElement(document.body, {
-    // customised options
-    // • auto-render specific keys, e.g.:
-    delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$', right: '$', display: false},
-        {left: '\\(', right: '\\)', display: false},
-        {left: '\\[', right: '\\]', display: true}
-    ],
-    // • rendering keys, e.g.:
-    throwOnError : false
-  });
+  // sendResponse({ inject: true });
 });
