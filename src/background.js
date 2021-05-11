@@ -21,47 +21,55 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   // https://stackoverflow.com/a/14245504/353337
   chrome.tabs.sendMessage(tabId, "get-inject", (response) => {
     if (!response.inject) {
+      chrome.action.setIcon({
+        tabId: tabId,
+        path: {
+          16: "images/logo-gray16.png",
+          32: "images/logo-gray32.png",
+          48: "images/logo-gray48.png",
+          128: "images/logo-gray128.png",
+        },
+      });
       return;
     }
     // multiple executeScript: <https://stackoverflow.com/q/21535233/353337>
-    chrome.scripting.executeScript(
-      {
+    chrome.scripting
+      .executeScript({
         target: { tabId: tabId },
         files: ["katex.js"],
-      },
-      () => {
-        chrome.scripting.executeScript(
+      })
+      .then(() => {
+        chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: ["auto-render.js"],
+        });
+      })
+      .then(() => {
+        chrome.scripting.insertCSS({
+          target: { tabId: tabId },
+          // webpack compiles the katex.less to background.css
+          files: ["background.css"],
+        });
+      })
+      .then(() => {
+        chrome.action.setIcon(
           {
-            target: { tabId: tabId },
-            files: ["auto-render.js"],
+            tabId: tabId,
+            path: {
+              16: "images/logo16.png",
+              32: "images/logo32.png",
+              48: "images/logo48.png",
+              128: "images/logo128.png",
+            },
           },
+          // Actually, we could send the message before setIcon has completed. This
+          // however leads to an inconsistent behavior or KaTeX. Sometimes, the math is
+          // rendered, sometimes not. Perhaps a timing issue within KaTeX? Anyway, leave
+          // this here.
           () => {
-            chrome.scripting.insertCSS(
-              {
-                target: { tabId: tabId },
-                // webpack compiles the katex.less to background.css
-                files: ["background.css"],
-              },
-              () => {
-                chrome.action.setIcon(
-                  {
-                    tabId: tabId,
-                    path: {
-                      16: "images/logo16.png",
-                      32: "images/logo32.png",
-                      48: "images/logo48.png",
-                      128: "images/logo128.png",
-                    },
-                  },
-                  () => {
-                    chrome.tabs.sendMessage(tabId, "render-math");
-                  }
-                );
-              }
-            );
+            chrome.tabs.sendMessage(tabId, "render-math");
           }
         );
-      }
-    );
+      });
   });
 });
