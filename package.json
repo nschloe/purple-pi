@@ -1,6 +1,6 @@
 {
   "name": "purple-pi",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Beautiful math wherever you want.",
   "repository": "https://github.com/nschloe/purple-pi",
   "scripts": {
@@ -14,12 +14,17 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "copy-webpack-plugin": "^8.1.1",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
+    "mini-css-extract-plugin": "^1.6.0",
     "prettier": "^2.2.1",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0",
     "webpack-merge": "^5.7.2"
   },
   "dependencies": {
-    "mathjax-full": "^3.1.4"
+    "css-loader": "^5.2.4",
+    "katex": "^0.13.9",
+    "style-loader": "^2.0.0"
   }
 }

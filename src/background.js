@@ -1,3 +1,7 @@
+// Include the LESS file, it's injected below. This require() call makes sure it's
+// picked up by webpack.
+require("../node_modules/katex/src/katex.less");
+
 // Check when/if a page has finished loading, and take events from there.
 // In a previous version, we just had content_script.js loaded and check the contents of
 // the page, but that doesn't always trigger. For example, it triggers when loading a
@@ -19,21 +23,44 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
     if (!response.inject) {
       return;
     }
+    // multiple executeScript: <https://stackoverflow.com/q/21535233/353337>
     chrome.scripting.executeScript(
       {
         target: { tabId: tabId },
-        files: ["mathjax.js"],
+        files: ["katex.js"],
       },
       () => {
-        chrome.action.setIcon({
-          path: {
-            16: "images/logo16.png",
-            32: "images/logo32.png",
-            48: "images/logo48.png",
-            128: "images/logo128.png",
+        chrome.scripting.executeScript(
+          {
+            target: { tabId: tabId },
+            files: ["auto-render.js"],
           },
-          tabId: tabId,
-        });
+          () => {
+            chrome.scripting.insertCSS(
+              {
+                target: { tabId: tabId },
+                // webpack compiles the katex.less to background.css
+                files: ["background.css"],
+              },
+              () => {
+                chrome.action.setIcon(
+                  {
+                    tabId: tabId,
+                    path: {
+                      16: "images/logo16.png",
+                      32: "images/logo32.png",
+                      48: "images/logo48.png",
+                      128: "images/logo128.png",
+                    },
+                  },
+                  () => {
+                    chrome.tabs.sendMessage(tabId, "render-math");
+                  }
+                );
+              }
+            );
+          }
+        );
       }
     );
   });
