@@ -21,6 +21,15 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   // https://stackoverflow.com/a/14245504/353337
   chrome.tabs.sendMessage(tabId, "get-inject", (response) => {
     if (!response.inject) {
+      chrome.action.setIcon({
+        tabId: tabId,
+        path: {
+          16: "images/logo-gray16.png",
+          32: "images/logo-gray32.png",
+          48: "images/logo-gray48.png",
+          128: "images/logo-gray128.png",
+        },
+      });
       return;
     }
     // multiple executeScript: <https://stackoverflow.com/q/21535233/353337>
@@ -58,5 +67,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
           }
         );
       });
+    // return sendMessage is async
+    return true;
   });
 });
