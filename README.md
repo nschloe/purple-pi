@@ -73,6 +73,11 @@ Chrome, go to `chrome://extensions` and `Load unpacked` this directory. Reload a
 necessary.
 
 
+### Not working
+
+ * [No extension works on the Chrome Web Store itself](https://stackoverflow.com/q/11613371/353337)
+
+
 ### Related projects
 
  * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)

@@ -1,4 +1,4 @@
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
@@ -20,5 +20,5 @@ module.exports = merge(common, {
   },
   // Use source-map to avoid illegal eval()s in the generated code, cf.
   // <https://github.com/webpack/webpack/issues/4899#issuecomment-609737316>.
-  devtool: "source-map"
+  devtool: "source-map",
 });
