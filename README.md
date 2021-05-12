@@ -3,7 +3,7 @@
   <p align="center">LaTeX math wherever you want.</p>
 </p>
 
-[![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)][cws]
+[![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/purple-pi/ci?style=flat-square)](https://github.com/nschloe/purple-pi/actions?query=workflow%3Aci)
