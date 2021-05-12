@@ -4,7 +4,7 @@
 </p>
 
 [![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)][cws]
-[![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
+[![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/purple-pi/ci?style=flat-square)](https://github.com/nschloe/purple-pi/actions?query=workflow%3Aci)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -22,6 +22,8 @@ Simply install the extension from the
 and enjoy 
 
 #### Cauchy's integral formula
+
+[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate)
 
 Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed
 disk $D$ defined as
@@ -42,7 +44,7 @@ Purple Pi only runs on web pages which contain the _activation link_
 ```markdown
 https://github.com/nschloe/purple-pi?activate
 ```
-You can add as an `<a>` tag
+You can add it as an `<a>` tag
 ```
 Rendered with <a href="https://github.com/nschloe/purple-pi?activate">Purple Pi</a>.
 ```
