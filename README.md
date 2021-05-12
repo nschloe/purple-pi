@@ -3,17 +3,17 @@
   <p align="center">LaTeX math wherever you want.</p>
 </p>
 
-[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/purple-pi/ci?style=flat-square)](https://github.com/nschloe/purple-pi/actions?query=workflow%3Aci)
+[![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)][cws]
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
+
+[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/purple-pi/ci?style=flat-square)](https://github.com/nschloe/purple-pi/actions?query=workflow%3Aci)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate&inlineMath=$)
-[![Discord](https://img.shields.io/static/v1?logo=discord&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
 
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
 on pages that don't otherwise support it. Examples are [GitHub
 READMEs](https://github.com/nschloe/ndim#the-formulas) and
-[Wikis](https://github.com/nschloe/purple-pi/wiki/Gallery) or
-[StackOverflow posts](https://stackoverflow.com/a/63796209/353337).
+[Wikis](https://github.com/nschloe/purple-pi/wiki/Gallery) or [StackOverflow
+posts](https://stackoverflow.com/a/63796209/353337).
 
 Simply install the extension from the
 
@@ -76,6 +76,7 @@ necessary.
  * [Boris Gromov's Wikipedia with MathJax](https://github.com/bgromov/wiki-mathjax)
  * [Or Sharir's MathJax Plugin for Github](https://github.com/orsharir/github-mathjax)
  * [Ellis Michael's TeX All the Things](https://github.com/emichael/texthings)
+ * [Aaron Choo's KaTeX GitHub Chrome Extension](https://github.com/AaronCQL/katex-github-chrome-extension)
 
 
 ### License
