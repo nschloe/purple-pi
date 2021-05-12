@@ -7,8 +7,8 @@
     "build": "webpack --config webpack.prod.js && cd dist && zip -r ../purple-pi.zip * && cd -",
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js",
-    "format": "prettier src/ --write",
-    "lint": "prettier src/ --check"
+    "format": "prettier src --write",
+    "lint": "prettier src --check"
   },
   "author": "Nico Schlömer",
   "license": "GPL-3.0-or-later",
@@ -17,7 +17,7 @@
     "less": "^4.1.1",
     "less-loader": "^8.1.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0",
