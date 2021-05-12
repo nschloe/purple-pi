@@ -50,14 +50,15 @@ module.exports = {
             options: {
               // don't try to resolve the url paths
               url: false,
-            }
+            },
           },
           {
             loader: "less-loader",
             options: {
               lessOptions: {
                 modifyVars: {
-                  "font-folder": "'chrome-extension://__MSG_@@extension_id__/fonts'",
+                  "font-folder":
+                    "'chrome-extension://__MSG_@@extension_id__/fonts'",
                   "use-ttf": false,
                   "use-woff": false,
                   "use-woff2": true,
