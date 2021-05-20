@@ -14,7 +14,7 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "copy-webpack-plugin": "^8.1.1",
-    "css-loader": "^5.2.4",
+    "css-loader": "^5.2.5",
     "less": "^4.1.1",
     "less-loader": "^9.0.0",
     "mini-css-extract-plugin": "^1.6.0",
