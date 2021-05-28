@@ -82,8 +82,9 @@ Chrome, go to `chrome://extensions` and `Load unpacked` this directory. Reload a
 necessary.
 
 
-### Not working
+#### Not working
 
+ * Not working on mobile. (No extensions there.)
  * [No extension works on the Chrome Web Store itself](https://stackoverflow.com/q/11613371/353337)
 
 
