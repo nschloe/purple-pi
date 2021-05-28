@@ -12,7 +12,7 @@
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
 on pages that don't otherwise support it. Examples are [GitHub
 READMEs](https://github.com/nschloe/ndim#the-formulas) and
-[Wikis](https://github.com/nschloe/purple-pi/wiki/Gallery) or [StackOverflow
+[Wikis](https://github.com/nschloe/purple-pi/wiki/Classical-gallery) or [StackOverflow
 posts](https://stackoverflow.com/a/63796209/353337).
 
 Simply install the extension from the
