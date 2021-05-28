@@ -39,9 +39,8 @@ f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 
 ### Content authors
 
-On GitHub (READMEs, Wikis, Issues etc.), LaTeX inline and display formulas are
-supported with [GitLab's syntax](https://docs.gitlab.com/ee/user/markdown.html#math),
-i.e.:
+On GitHub (READMEs, Wikis, Issues etc.), LaTeX inline and display formulas are supported
+using native syntax, i.e.:
 ````markdown
 Some inline math: $`x\in R`$.
 Some display-style math:
@@ -49,6 +48,7 @@ Some display-style math:
 e^i + 1 = 0
 ```
 ````
+[GitLab](https://docs.gitlab.com/ee/user/markdown.html#math) uses the same syntax.
 
 Purple Pi also runs on pages which contain the _activation link_
 ```markdown
