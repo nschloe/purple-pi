@@ -12,39 +12,48 @@
 Purple Pi is a browser extension for Google Chrome that renders LaTeX-style mathematics
 on pages that don't otherwise support it. Examples are [GitHub
 READMEs](https://github.com/nschloe/ndim#the-formulas) and
-[Wikis](https://github.com/nschloe/purple-pi/wiki/Gallery) or [StackOverflow
+[Wikis](https://github.com/nschloe/purple-pi/wiki/Classical-gallery) or [StackOverflow
 posts](https://stackoverflow.com/a/63796209/353337).
 
 Simply install the extension from the
 
   * [Chrome Web Store](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 
-and enjoy 
+and enjoy.
 
 #### Cauchy's integral formula
 
-[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate)
-
-Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed
-disk $D$ defined as
-$$
-D = \bigl\\{z:|z-z_{0}|\leq r\bigr\\}
-$$
-is completely contained in $U$. Let $f: U\to\mathbb{C}$ be a holomorphic function, and
-let $\gamma$ be the circle, oriented counterclockwise, forming the boundary of $D$.
-Then for every $a$ in the interior of $D$,
-$$
+Let $`U`$ be an open subset of the complex plane $`\mathbb{C}`$, and suppose the closed
+disk $`D`$ defined as
+```math
+D = \bigl\{z:|z-z_{0}|\leq r\bigr\}
+```
+is completely contained in $`U`$. Let $`f: U\to\mathbb{C}`$ be a holomorphic function,
+and let $`\gamma`$ be the circle, oriented counterclockwise, forming the boundary of
+$`D`$.  Then for every $a$ in the interior of $`D`$,
+```math
 f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
-$$
+```
 
+### Content authors
 
-### Authors
+On GitHub (READMEs, Wikis, Issues etc.), LaTeX inline and display formulas are supported
+using native syntax, i.e.:
+````markdown
+Some inline math: $`x\in R`$.
+Some display-style math:
+```math
+e^i + 1 = 0
+```
+````
+[GitLab](https://docs.gitlab.com/ee/user/markdown.html#math) uses the same syntax.
 
-Purple Pi only runs on web pages which contain the _activation link_
+Purple Pi also runs on pages which contain the _activation link_
 ```markdown
 https://github.com/nschloe/purple-pi?activate
 ```
-You can add it as an `<a>` tag
+You can then use the classical `$...$` notation for inline and `$$...$$` for
+display math. You can add it as an `<a>` tag
 ```
 Rendered with <a href="https://github.com/nschloe/purple-pi?activate">Purple Pi</a>.
 ```
@@ -53,8 +62,6 @@ or as a badge
 [![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate)
 ```
 The extension will then inject [KaTeX](https://katex.org/) into the page.
-(The reason why Purple Pi uses links for activation is that you can use them almost
-everywhere: GitHub pages, StackOverflow posts, etc.)
 
 ### Build instructions
 
@@ -73,8 +80,9 @@ Chrome, go to `chrome://extensions` and `Load unpacked` this directory. Reload a
 necessary.
 
 
-### Not working
+#### Not working
 
+ * Not working on mobile. (No extensions there.)
  * [No extension works on the Chrome Web Store itself](https://stackoverflow.com/q/11613371/353337)
 
 
