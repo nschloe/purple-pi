@@ -17,7 +17,6 @@ function stringToBoolean(string) {
 
 const getInject = () => {
   for (element of document.getElementsByTagName("code")) {
-    console.log(element);
     if (
       element.previousSibling !== null &&
       element.previousSibling.textContent.slice(-1) == "$" &&
@@ -55,8 +54,6 @@ const getInject = () => {
 };
 
 const renderMath = () => {
-  console.log("RENDER");
-
   // make sure this comes before the explicit <code> loop. <pre> tages contain <code>,
   // too, but are remove here.
   for (let element of document.querySelectorAll("pre[lang='math']")) {
@@ -67,7 +64,10 @@ const renderMath = () => {
     });
   }
 
-  for (element of document.getElementsByTagName("code")) {
+  // Using getElementsByTagName("code") doesn't work here since the list is dynamic and
+  // the <code> tags are removed in the loop. Instead, use querySelectorAll which is
+  // static.
+  for (element of document.querySelectorAll('code')) {
     if (
       element.previousSibling !== null &&
       element.previousSibling.textContent.slice(-1) == "$" &&
@@ -80,17 +80,14 @@ const renderMath = () => {
       element.nextSibling.textContent =
         element.nextSibling.textContent.substring(1);
 
-      // replace <code> with <span> to code css
-      const span = document.createElement("span");
-      span.textContent = element.textContent;
-      console.log("span", span);
-      element.replaceWith(span);
-
       // render
-      katex.render(span.textContent, span, {
+      katex.render(element.textContent, element, {
         displayMode: false,
         throwOnError: false,
       });
+
+      // remove surrounding <code></code>
+      element.outerHTML = element.innerHTML;
     }
   }
 
