@@ -23,8 +23,6 @@ and enjoy.
 
 #### Cauchy's integral formula
 
-[![purple-pi](https://img.shields.io/badge/Rendered%20with-Purple%20Pi-bd00ff?style=flat-square)](https://github.com/nschloe/purple-pi?activate)
-
 Let $`U`$ be an open subset of the complex plane $`\mathbb{C}`$, and suppose the closed
 disk $`D`$ defined as
 ```math
