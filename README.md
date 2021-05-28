@@ -41,7 +41,7 @@ f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 
 On GitHub (READMEs, Wikis, Issues etc.), LaTeX inline and display formulas are
 supported with [GitLab's syntax](https://docs.gitlab.com/ee/user/markdown.html#math),
-i.e., <code>$`a^2`$</code> for inline and <code>```math</code> for diplay-style math.
+i.e.:
 ````markdown
 Some inline math: $`x\in R`$.
 Some display-style math:
