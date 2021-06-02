@@ -30,7 +30,7 @@ D = \bigl\{z:|z-z_{0}|\leq r\bigr\}
 ```
 is completely contained in $`U`$. Let $`f: U\to\mathbb{C}`$ be a holomorphic function,
 and let $`\gamma`$ be the circle, oriented counterclockwise, forming the boundary of
-$`D`$.  Then for every $a$ in the interior of $`D`$,
+$`D`$.  Then for every $`a`$ in the interior of $`D`$,
 ```math
 f(a) = \frac{1}{2\pi i} \oint _{\gamma}\frac{f(z)}{z-a} dz.
 ```
@@ -65,7 +65,7 @@ The extension will then inject [KaTeX](https://katex.org/) into the page.
 
 ### Build instructions
 
-To build the production zip, simply install the dependencies (`npm i`), then run
+To build the production zip, simply install the dependencies (`npm ci`), then run
 ```
 npm run build
 ```

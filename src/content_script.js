@@ -1,20 +1,3 @@
-// https://stackoverflow.com/a/1414175/353337
-function stringToBoolean(string) {
-  switch (string.toLowerCase().trim()) {
-    case "true":
-    case "yes":
-    case "1":
-      return true;
-    case "false":
-    case "no":
-    case "0":
-    case null:
-      return false;
-    default:
-      return Boolean(string);
-  }
-}
-
 mode = null;
 
 const getInject = () => {
@@ -49,10 +32,10 @@ const getInject = () => {
 };
 
 const renderMathMarkdown = () => {
-  // make sure this comes before the explicit <code> loop. <pre> tages contain <code>,
-  // too, but are remove here.
+  // make sure this comes before the explicit <code> loop. <pre> tags contain <code>,
+  // too, but are removed there.
   for (element of document.querySelectorAll("pre[lang='math']")) {
-    // render
+    // render; only use textContent, so throw away <code> tags etc.
     katex.render(element.textContent, element.parentNode, {
       displayMode: true,
       throwOnError: false,
