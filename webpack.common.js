@@ -75,6 +75,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/manifest.json" },
+        { from: "src/popup.html" },
         { from: "./node_modules/katex/dist/katex.js" },
         { from: "./node_modules/katex/dist/contrib/auto-render.js" },
         // https://stackoverflow.com/a/67084208/353337
