@@ -1,7 +1,9 @@
-<p align="center">
-  <a href="https://github.com/nschloe/purple-pi"><img alt="purple-pi" src="https://nschloe.github.io/purple-pi/logo-with-text.svg" width="60%"></a>
-  <p align="center">LaTeX math wherever you want.</p>
-</p>
+Purple Pi is no longer maintained. For math and more on GitHub, use the [xdoc](https://github.com/nschloe/xdoc)
+extension.
+
+---
+
+# Purple Pi
 
 [![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
