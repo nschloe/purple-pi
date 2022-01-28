@@ -1,9 +1,10 @@
-Purple Pi is no longer maintained. For math and more on GitHub, use the [xdoc](https://github.com/nschloe/xdoc)
+### Deprecation
+Purple Pi is no longer maintained. For math and more on GitHub, use the [xhub](https://github.com/nschloe/xhub)
 extension.
 
 ---
 
-# Purple Pi
+## Purple Pi
 
 [![Chrome Web Store version](https://img.shields.io/chrome-web-store/v/ingbbliecffofmmokknelnijicfcgolb)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
 [![chrome users](https://img.shields.io/chrome-web-store/users/ingbbliecffofmmokknelnijicfcgolb?label=Chrome%20users&logo=google-chrome&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/purple-pi/ingbbliecffofmmokknelnijicfcgolb)
